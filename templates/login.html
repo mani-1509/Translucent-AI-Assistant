@@ -1,0 +1,40 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="login_container">
+  <div class="login_warpper">
+    <h1 class="loginText">Login</h1>
+    <br />
+    <form method="POST" action="/login" class="boxxs">
+      <label for="username">Username:</label>
+      <input
+        class="loginUsername"
+        type="text"
+        id="username"
+        name="username"
+        placeholder="UserName"
+        required
+      /><br />
+      <br />
+      <label for="password">Password:</label>
+      <input
+        class="loginPassword"
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Password"
+        minlength="8"
+        required
+      /><br />
+      <br />
+      <p>Don't have an account? <a href="/register">Register</a></p>
+      <button class="loginBtn" type="submit">Log In</button>
+      <br /><br />
+    </form>
+    {% if error %}
+    <p style="color: red">{{ error }}</p>
+    <br /><br />
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}
